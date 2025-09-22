@@ -1,0 +1,27 @@
+.chooseTopic-page{
+    height: 100vh;
+    width: 200vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+
+}
+
+.choose-topic{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.topic-img{
+    width: 70px;
+    height: 70px;
+    border-radius: 40%;
+    object-fit: cover;
+    
+}
+.topic-title{
+font-size: 20px;
+
+}
