@@ -7,15 +7,31 @@ quizContentPage.style.display="none";
 
 
 let currentQuestion = 0;
+let questions = [];
+
+// load Questions:
 
 async function loadQuestion(theme){
+    
     try{
         const response = await fetch(`../data/${theme}.json`);
-        const questions = await response.json();
+         questions = await response.json();
         console.log("questins : ",questions);
         
+        renderQuestion();
+      
         
-        quizContent.innerHTML =
+    }catch (error){
+        console.error("Error de chargement JSON:", error);
+        
+    }
+    
+}
+
+// render questions
+
+function renderQuestion(){
+     quizContent.innerHTML =
              `
               <div class="quizContent-header">
     <h3>${currentQuestion+1}/${questions.length}</h3>
@@ -37,18 +53,17 @@ async function loadQuestion(theme){
       }
     </div>
     <div class="quizContent-footer">
-        <button class="next-btn" onclick="">NEXT</button>
+        <button class="next-btn">NEXT</button>
         
     </div>
   </div>
             `;
-      
-        
-    }catch (error){
-        console.error("Error de chargement JSON:", error);
-        
-    }
+
+             const nextBtn = quizContent.querySelector(".next-btn");
+  if (nextBtn) nextBtn.addEventListener("click", nextQuestion);
 }
+
+// choose The Theme:
 
 choosenTheme.forEach(btn => {
     btn.addEventListener("click", () => {
@@ -59,3 +74,11 @@ choosenTheme.forEach(btn => {
 })
 });
 
+
+// move to next Question: 
+
+function nextQuestion(){
+    alert("hhh");
+    currentQuestion++;
+    renderQuestion();
+}
