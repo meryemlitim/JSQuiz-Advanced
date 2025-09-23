@@ -12,7 +12,7 @@ let questions = [];
 // load Questions:
 
 async function loadQuestion(theme){
-    
+
     try{
         const response = await fetch(`../data/${theme}.json`);
          questions = await response.json();
@@ -31,6 +31,7 @@ async function loadQuestion(theme){
 // render questions
 
 function renderQuestion(){
+    const inputType = questions[currentQuestion].correct.length > 1 ? "checkbox" : "radio" ;
      quizContent.innerHTML =
              `
               <div class="quizContent-header">
@@ -45,7 +46,7 @@ function renderQuestion(){
       ${questions[currentQuestion].options.map((op,index)=>{
         return `
         <label>
-        <input type="checkbox" class="anwser-input" name="q${currentQuestion+1}" value="${op}"  />
+        <input type="${inputType}" class="anwser-input" name="q${currentQuestion+1}" value="${op}"  />
       ${op}
       </label> 
         `;
@@ -78,7 +79,6 @@ choosenTheme.forEach(btn => {
 // move to next Question: 
 
 function nextQuestion(){
-    alert("hhh");
     currentQuestion++;
     renderQuestion();
 }

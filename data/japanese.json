@@ -32,6 +32,6 @@
   {
     "question": "Quelle est la lecture de ce kanji : 花 ?",
     "options": ["ばな", "かな", "はな", "なば"],
-    "correct": ["はな", "ばな"]
+    "correct": ["はな"]
   }
 ]

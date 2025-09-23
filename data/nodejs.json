@@ -1,0 +1,37 @@
+[
+  {
+    "question": "What does JS stand for?",
+    "options": ["Java Source", "JavaScript", "Just Script", "Jolly System"],
+    "correct": ["JavaScript"]
+  },
+  {
+    "question": "Which keyword is used to declare a variable in ES6?",
+    "options": ["var", "let", "const", "int"],
+    "correct": ["let", "const"]
+  },
+  {
+    "question": "What is the output of: console.log(typeof null)?",
+    "options": ["object", "null", "undefined", "boolean"],
+    "correct": ["object"]
+  },
+  {
+    "question": "Which method converts a JSON string into a JavaScript object?",
+    "options": ["JSON.parse()", "JSON.stringify()", "Object.parse()", "toObject()"],
+    "correct": ["JSON.parse()"]
+  },
+  {
+    "question": "Which symbol is used for single-line comments in JavaScript?",
+    "options": ["//", "/* */", "#", "--"],
+    "correct": ["//"]
+  },
+  {
+    "question": "What is the result of 2 + '2' in JavaScript?",
+    "options": ["4", "'22'", "NaN", "Error"],
+    "correct": ["'22'"]
+  },
+  {
+    "question": "Which method adds a new element at the end of an array?",
+    "options": ["push()", "pop()", "shift()", "unshift()"],
+    "correct": ["push()"]
+  }
+]
