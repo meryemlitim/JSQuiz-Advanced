@@ -1,0 +1,37 @@
+[
+  {
+    "question": "Quelle est la lecture de ce kanji : 日 ?",
+    "options": ["にち", "ひ", "か", "じつ"],
+    "correct": ["にち", "ひ"]
+  },
+  {
+    "question": "Quelle est la lecture de ce kanji : 月 ?",
+    "options": ["つき", "げつ", "がつ", "ひ"],
+    "correct": ["つき", "げつ", "がつ"]
+  },
+  {
+    "question": "Quelle est la lecture de ce kanji : 水 ?",
+    "options": ["みず", "すい", "みずうみ", "もり"],
+    "correct": ["みず", "すい"]
+  },
+  {
+    "question": "Quelle est la lecture de ce kanji : 火 ?",
+    "options": ["ひ", "か", "ほ", "ほのお"],
+    "correct": ["ひ", "か"]
+  },
+  {
+    "question": "Quelle est la lecture de ce kanji : 木 ?",
+    "options": ["もく", "き", "こ", "ぼく"],
+    "correct": ["もく", "き"]
+  },
+  {
+    "question": "Quelle est la lecture de ce kanji : 山 ?",
+    "options": ["やま", "さん", "せん", "たけ"],
+    "correct": ["やま", "さん"]
+  },
+  {
+    "question": "Quelle est la lecture de ce kanji : 花 ?",
+    "options": ["ばな", "かな", "はな", "なば"],
+    "correct": ["はな", "ばな"]
+  }
+]
