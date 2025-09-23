@@ -10,7 +10,7 @@ let currentQuestion = 0;
 let questions = [];
 
 // varibles for timer
-let questionTime=10;
+let questionTime;
 let questionTimeId;
 let globleTime=0;
 let globleTimeId;
@@ -36,7 +36,7 @@ async function loadQuestion(theme){
 // render questions
 
 function renderQuestion(){
-    let timeLeft = questionTime;
+    let timeLeft = questions[currentQuestion].time;
     // if(questionTimeId){
     //     clearInterval(questionTimeId);
     // }
@@ -46,7 +46,7 @@ function renderQuestion(){
              `
               <div class="quizContent-header">
     <h3>${currentQuestion+1}/${questions.length}</h3>
-    <h3 id="timer">Timer : 10s</h3>
+    <h3 id="timer">Timer : ${questions[currentQuestion].time}s</h3>
   </div>
 
   <div class="quizContent-content">
@@ -78,7 +78,6 @@ function renderQuestion(){
       timeLeft--;   
   if(timeLeft < 0){
     clearInterval(questionTimeId);
-
     nextQuestion();    
    
   }
