@@ -1,11 +1,9 @@
-import {
-  currentQuestion,
-  questions,
-} from "./quiz.js";
+import { currentQuestion, questions } from "./quiz.js";
 import { nextQuestion } from "./quiz.js";
 import { handleAnswer } from "./quiz.js";
 import { QuestionTimer } from "./quiz.js";
-// render questions
+
+// render questions :
 export function renderQuestion() {
   let timeLeft = questions[currentQuestion].time;
   // if(questionTimeId){
@@ -16,7 +14,7 @@ export function renderQuestion() {
   const inputType =
     questions[currentQuestion].correct.length > 1 ? "checkbox" : "radio";
   quizContent.innerHTML = `
-             <div class="quizContent-header">
+    <div class="quizContent-header">
     <h3>${currentQuestion + 1}/${questions.length}</h3>
     <h3 id="timer">Timer : ${questions[currentQuestion].time}s</h3>
   </div>
@@ -46,8 +44,6 @@ export function renderQuestion() {
 
   const nextBtn = quizContent.querySelector(".next-btn");
   if (nextBtn) nextBtn.addEventListener("click", nextQuestion);
-
- 
 
   QuestionTimer(timeLeft);
 
