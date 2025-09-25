@@ -11,6 +11,84 @@
 </head>
 
 <body>
+
+  <!-- dashboard page -->
+  <section class="dashbord">
+    <div class="container">
+      <button class="play-btn">▶ Play Quiz</button> 
+        <div class="header">
+            <h1>Quiz Dashboard</h1>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>📊 General Statistics</h3>
+                <div class="stat-value" id="totalGames">0</div>
+                <div class="stat-label">Games played</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>🏆 Best Score</h3>
+                <div class="stat-value" id="bestScore">0</div>
+                <div class="stat-label">Maximum points</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>📈 Average Score</h3>
+                <div class="stat-value" id="avgScore">0</div>
+                <div class="stat-label">Points on average</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>🎨 Favorite Theme</h3>
+                <div class="stat-value" id="favTheme">-</div>
+                <div class="stat-label">Most played</div>
+            </div>
+        </div>
+
+        <div class="leaderboard">
+            <h3>🏅 Top 3 Players</h3>
+            <div class="podium" id="podium">
+                <div class="podium-place second">
+                    <div class="position">🥈 2nd</div>
+                    <div class="name" id="second-name">Meryem</div>
+                    <!-- <div class="score" id="second-score">10</div> -->
+                </div>
+                <div class="podium-place first">
+                    <div class="position">🥇 1st</div>
+                    <div class="name" id="first-name">Hana</div>
+                    <!-- <div class="score" id="first-score">5</div> -->
+                </div>
+                <div class="podium-place third">
+                    <div class="position">🥉 3rd</div>
+                    <div class="name" id="third-name">Kana</div>
+                    <!-- <div class="score" id="third-score">2</div> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="charts-section">
+            <div class="chart-container">
+                <h3>📊 Distribution by Theme</h3>
+                <canvas id="themeChart"></canvas>
+            </div>
+            
+            <div class="chart-container">
+                <h3>📈 Score Progress</h3>
+                <canvas id="progressChart"></canvas>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h3>📋 Game History</h3>
+            <div id="historyContent">
+                <div class="no-data">No games recorded yet</div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- theme page -->
   <section class="chooseTopic-page">
     <div class="choose-topic" id="theme-selector" data-theme="javascript">
       <img class="topic-img"
@@ -28,13 +106,16 @@
       <h3 class="topic-title">Node js</h3>
     </div>
   </section>
+
+  <!-- quiz content page -->
   <section class="quizContent-page">
 
     <div class="quiz-content">
 
     </div>
   </section>
-
+  
+  <!-- result && correction page -->
   <section class="result-page">
     <h1>YOUR QUIZ RESULT</h1>
     <div class="score-feedback">
@@ -49,18 +130,11 @@
     </div>
     <div>
       <div class="result-btn">
-      <button class="back-to-dashboard">Go To Dashboard</button>
-      <button class="retake-quiz">Retake Quiz</button>
-
+        <button class="back-to-dashboard">Go To Dashboard</button>
+        <button class="retake-quiz">Retake Quiz</button>
       </div>
   </section>
 
-  <section class="dashbord">
-   <h1>welcome to dashbord</h1>
-  </section>
-
-  <!-- <section id="quiz-container">
-    </section> -->
 
   <script type="module" src="js/main.js"></script>
 </body>
