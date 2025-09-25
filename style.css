@@ -220,10 +220,22 @@ font-size: 20px;
     font-size: 20px;
 }
 
-.home-btn {
+.back-to-dashboard {
   background-color: #4CAF50;
   color: white;
-  padding: 10px 20px;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.retake-quiz {
+  background-color: #514caf;
+  color: white;
+  padding: 16px 20px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -277,4 +289,16 @@ font-size: 20px;
     flex-direction: column;
     gap: 8px;
     justify-content: start;
+}
+.result-btn{
+  display: flex;
+  gap: 40px;
+}
+
+
+
+/* dashbord */
+
+.dashbord{
+  display: none;
 }

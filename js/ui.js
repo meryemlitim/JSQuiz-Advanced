@@ -115,6 +115,39 @@ const correction = document.querySelector('.corrections') ;
                   }
   });
 document.querySelector('.score').textContent = `Score : ${score}`;
-
+feedback(score);
 
 }
+
+
+// for the quiz feedback
+
+function feedback(score) {
+  let message = "";
+
+  if (score === 10) {
+    message = `🏆 Feedback: Perfect score! You're amazing! 🌟`;
+  } else if (score >= 8) {
+    message = `🔥 Feedback: Great job! Almost perfect! 👏`;
+  } else if (score >= 6) {
+    message = `😊 Feedback: Good work! Keep it up! 💪`;
+  } else if (score >= 4) {
+    message = `📚 Feedback: Not bad! You need more practice! 🎯`;
+  } else {
+    message = `😅 Feedback: Don't give up! Practice makes perfect! 💡`;
+  }
+
+  document.querySelector(".feedback").textContent = message;
+}
+
+// Retake The Quiz :
+document.querySelector('.retake-quiz').addEventListener('click', () => {
+  document.querySelector('.result-page').style.display = 'none';
+  document.querySelector('.chooseTopic-page').style.display = 'flex';
+});
+
+// Go Back To Dashboard :
+document.querySelector('.back-to-dashboard').addEventListener('click', () => {
+  document.querySelector('.result-page').style.display = 'none';
+  document.querySelector('.dashbord').style.display = 'flex';
+});
