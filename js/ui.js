@@ -3,6 +3,9 @@ import { nextQuestion } from "./quiz.js";
 import { handleAnswer } from "./quiz.js";
 import { QuestionTimer } from "./quiz.js";
 
+const quizContentPage = document.querySelector(".quizContent-page");
+const quizResult = document.querySelector(".result-page");
+
 // render questions :
 export function renderQuestion() {
   let timeLeft = questions[currentQuestion].time;
@@ -50,4 +53,68 @@ export function renderQuestion() {
   document.querySelectorAll(".anwser-input").forEach((input) => {
     input.addEventListener("change", (e) => handleAnswer());
   });
+}
+
+
+// show quiz result :
+export function showResult(userAnswers, score){
+quizContentPage.style.display = "none";
+quizResult.style.display = "flex";
+const correction = document.querySelector('.corrections') ;
+ correction.innerHTML = "";
+  let isCorrect; 
+  
+  questions.forEach((q, index) => {
+    const choosenAnswer = userAnswers[index]?.answers || [];
+    const correctAnswer = q.correct; 
+    isCorrect =
+            correctAnswer.length === choosenAnswer.length &&
+            correctAnswer.every((ans) => choosenAnswer.includes(ans));
+            if (isCorrect) {
+              score++;
+                    correction.innerHTML += `
+              <h3>${index + 1} - ${q.question}:</h3>
+              <h3 style="color:green" class="correc">
+                You answered: ${
+                  Array.isArray(choosenAnswer)
+                    ? choosenAnswer.length > 0
+                      ? choosenAnswer.join(", ")
+                      : "No answer"
+                    : choosenAnswer
+                    ? choosenAnswer
+                    : "No answer"
+                } (Correct)
+              </h3>
+            `;
+                  } else {
+                    correction.innerHTML += `
+              <h3>${index + 1} - ${q.question}:</h3>
+              <h3 style="color:red" class="correc">
+                You answered: ${
+                  Array.isArray(choosenAnswer)
+                    ? choosenAnswer.length > 0
+                      ? choosenAnswer.join(", ")
+                      : "No answer"
+                    : choosenAnswer
+                    ? choosenAnswer
+                    : "No answer"
+                }
+              </h3>
+              <h3 class="correc">
+                Correct answer: ${
+                  Array.isArray(correctAnswer)
+                    ? correctAnswer.length > 0
+                      ? correctAnswer.join(", ")
+                      : "No answer"
+                    : correctAnswer
+                    ? correctAnswer
+                    : "No answer"
+                }
+              </h3>
+            `;
+                  }
+  });
+document.querySelector('.score').textContent = `Score : ${score}`;
+
+
 }

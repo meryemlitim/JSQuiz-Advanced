@@ -4,6 +4,7 @@ const choosenTheme = document.querySelectorAll(".choose-topic");
 // const quizContainer = document.getElementById("quiz-container");
 const quizContentPage = document.querySelector(".quizContent-page");
 const chooseThemePage = document.querySelector(".chooseTopic-page");
+const quizResult = document.querySelector(".quiz-result");
 quizContentPage.style.display = "none";
 
 

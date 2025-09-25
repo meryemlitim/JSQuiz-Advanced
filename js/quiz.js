@@ -1,4 +1,4 @@
-import { renderQuestion } from "./ui.js";
+import { renderQuestion, showResult } from "./ui.js";
 import { stockUserAnswers } from "./storage.js"
 export let currentQuestion = 0;
 export let questions = [];
@@ -24,7 +24,7 @@ export async function loadQuestion(theme) {
 // move to next Question :
 export function nextQuestion() {
   if(currentQuestion >= questions.length-1 ){
-    alert(score);
+    showResult(userAnswers, score); 
   }else{
      if (questionTimeId) {
     clearInterval(questionTimeId);
@@ -66,7 +66,6 @@ function feedbackVisuel(checkedAnswer,input){
    iscorrect = questions[currentQuestion].correct.includes(checkedAnswer) ? true : false;
       if (iscorrect) {
         input.parentElement.style.background = "green";
-        score++;
     } else {
         input.parentElement.style.background = "red";
     }
@@ -84,4 +83,10 @@ export function QuestionTimer(timeLeft){
     }
   }, 1000);
 }     
+
+// check the user's answers :
+
+export function checkAnswers(){
+
+}
 
