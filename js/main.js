@@ -7,11 +7,13 @@ const chooseThemePage = document.querySelector(".chooseTopic-page");
 const quizResult = document.querySelector(".quiz-result");
 quizContentPage.style.display = "none";
 const chooseUsernamePage = document.querySelector(".chooseUsername-page");
-
+const playAgainBtn = document.querySelector('.play-btn');
+const dashbord = document.querySelector('.dashbord');
 export let usernameName;
 
 // Enter username :
 chooseUsername(); 
+
 // username :
 function chooseUsername() {
   chooseUsernamePage.style.display = "flex";
@@ -36,20 +38,25 @@ quizstarbtn.addEventListener("click", () => {
 });
 
 }
+
 // choose The Theme:
 export function chooseTheme(){
+  resetCurrentQuestion();
+
   chooseUsernamePage.style.display = "none";
+  dashbord.style.display = "none";
   chooseThemePage.style.display = "flex";
 
-  choosenTheme.forEach((btn) => {
-  btn.addEventListener("click", () => {
-  chooseThemePage.style.display = "none";
-  quizContentPage.style.display = "flex";
-  const theme = btn.dataset.theme;
-  loadQuestion(theme);
-  });
-  });
 }
+
+choosenTheme.forEach((btn) => {
+btn.addEventListener("click", () => {
+chooseThemePage.style.display = "none";
+quizContentPage.style.display = "flex";
+const theme = btn.dataset.theme;
+loadQuestion(theme);
+});
+});
 
 // Retake The Quiz :
 document.querySelector('.retake-quiz').addEventListener('click', () => {
@@ -65,3 +72,8 @@ document.querySelector('.back-to-dashboard').addEventListener('click', () => {
   document.querySelector('.dashbord').style.display = 'block';
   document.querySelector('.result-page').style.display = 'none';  
 });
+
+
+playAgainBtn.addEventListener('click', () => {
+chooseTheme();
+})

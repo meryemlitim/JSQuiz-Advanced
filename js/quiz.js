@@ -96,9 +96,19 @@ export function checkAnswers(){
 // reset questions
 export function resetCurrentQuestion() {
   currentQuestion = 0;
-  questionTimeId = null;
   userAnswers = []
-  clearInterval(questionTimeId);
+  quizEnd = false;
+
+  if (questionTimeId) {
+    clearInterval(questionTimeId);
+    questionTimeId = null;
+  }
+  const correctionBox = document.querySelector('.corrections');
+  if (correctionBox) correctionBox.innerHTML = "";
+
+  const scoreBox = document.querySelector('.score');
+  if (scoreBox) scoreBox.textContent = "";
+
 
 }
 
