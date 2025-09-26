@@ -7,7 +7,7 @@ let userAnswers = [];
 
 // varibles for timer :
 let questionTimeId = null;
-
+let quizEnd = false;
 // load Questions:
 export async function loadQuestion(theme) {
   try {
@@ -23,7 +23,11 @@ export async function loadQuestion(theme) {
 
 // move to next Question :
 export function nextQuestion() {
+  if(quizEnd) return;
   if(currentQuestion >= questions.length-1 ){
+    quizEnd= true;
+        stockUserAnswers(userAnswers, score); 
+
     showResult(userAnswers, score); 
   }else{
      if (questionTimeId) {
@@ -52,8 +56,8 @@ export function handleAnswer(){
     feedbackVisuel(checkedAnswer,input);
  
       });
-      if(currentQuestion >= questions.length-1){
-
+      if(currentQuestion === questions.length-1){
+     console.log("🙂🔪🔪🔪");
         stockUserAnswers(userAnswers, score); 
       }
 
@@ -89,6 +93,13 @@ export function QuestionTimer(timeLeft){
 export function checkAnswers(){
 
 }
+// reset questions
+export function resetCurrentQuestion() {
+  currentQuestion = 0;
+  questionTimeId = null;
+  userAnswers = []
+  clearInterval(questionTimeId);
 
+}
 
 

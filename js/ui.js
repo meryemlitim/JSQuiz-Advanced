@@ -2,6 +2,7 @@ import { currentQuestion, questions } from "./quiz.js";
 import { nextQuestion } from "./quiz.js";
 import { handleAnswer } from "./quiz.js";
 import { QuestionTimer } from "./quiz.js";
+import { chooseTheme } from "./main.js";
 
 const quizContentPage = document.querySelector(".quizContent-page");
 const quizResult = document.querySelector(".result-page");
@@ -45,8 +46,11 @@ export function renderQuestion() {
   </div>
             `;
 
-  const nextBtn = quizContent.querySelector(".next-btn");
-  if (nextBtn) nextBtn.addEventListener("click", nextQuestion);
+  // const nextBtn = quizContent.querySelector(".next-btn");
+  // if (nextBtn) nextBtn.addEventListener("click", nextQuestion);
+
+ const nextBtn = quizContent.querySelector(".next-btn");
+if (nextBtn) nextBtn.onclick = nextQuestion;
 
   QuestionTimer(timeLeft);
 
@@ -54,7 +58,6 @@ export function renderQuestion() {
     input.addEventListener("change", (e) => handleAnswer());
   });
 }
-
 
 // show quiz result :
 export function showResult(userAnswers, score){
@@ -119,9 +122,7 @@ feedback(score);
 
 }
 
-
-// for the quiz feedback
-
+// for the quiz feedback :
 function feedback(score) {
   let message = "";
 
@@ -140,14 +141,5 @@ function feedback(score) {
   document.querySelector(".feedback").textContent = message;
 }
 
-// Retake The Quiz :
-document.querySelector('.retake-quiz').addEventListener('click', () => {
-  document.querySelector('.result-page').style.display = 'none';
-  document.querySelector('.chooseTopic-page').style.display = 'flex';
-});
 
-// Go Back To Dashboard :
-document.querySelector('.back-to-dashboard').addEventListener('click', () => {
-  document.querySelector('.result-page').style.display = 'none';
-  document.querySelector('.dashbord').style.display = 'flex';
-});
+
