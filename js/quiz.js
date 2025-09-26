@@ -1,5 +1,5 @@
 import { renderQuestion, showResult } from "./ui.js";
-import { stockUserAnswers } from "./storage.js"
+// import { stockUserAnswers } from "./storage.js"
 export let currentQuestion = 0;
 export let questions = [];
 let score = 0;
@@ -8,6 +8,7 @@ let userAnswers = [];
 // varibles for timer :
 let questionTimeId = null;
 let quizEnd = false;
+
 // load Questions:
 export async function loadQuestion(theme) {
   try {
@@ -26,7 +27,10 @@ export function nextQuestion() {
   if(quizEnd) return;
   if(currentQuestion >= questions.length-1 ){
     quizEnd= true;
-        stockUserAnswers(userAnswers, score); 
+    console.log("Saving to localStorage with score:", score);
+        // console.log("Saving to localStorage with score:", score);
+
+        // stockUserAnswers(userAnswers, score); 
 
     showResult(userAnswers, score); 
   }else{
@@ -56,10 +60,7 @@ export function handleAnswer(){
     feedbackVisuel(checkedAnswer,input);
  
       });
-      if(currentQuestion === questions.length-1){
-     console.log("🙂🔪🔪🔪");
-        stockUserAnswers(userAnswers, score); 
-      }
+     
 
 }
 
@@ -89,11 +90,11 @@ export function QuestionTimer(timeLeft){
 }     
 
 // check the user's answers :
-
 export function checkAnswers(){
 
 }
-// reset questions
+
+// reset questions :
 export function resetCurrentQuestion() {
   currentQuestion = 0;
   userAnswers = []

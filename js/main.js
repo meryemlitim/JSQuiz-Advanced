@@ -73,7 +73,8 @@ document.querySelector('.back-to-dashboard').addEventListener('click', () => {
   document.querySelector('.result-page').style.display = 'none';  
 });
 
-
+// play quiz again : 
 playAgainBtn.addEventListener('click', () => {
 chooseTheme();
 })
+

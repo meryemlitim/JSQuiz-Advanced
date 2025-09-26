@@ -2,7 +2,7 @@ import { currentQuestion, questions } from "./quiz.js";
 import { nextQuestion } from "./quiz.js";
 import { handleAnswer } from "./quiz.js";
 import { QuestionTimer } from "./quiz.js";
-import { chooseTheme } from "./main.js";
+import { stockUserAnswers } from "./storage.js"
 
 const quizContentPage = document.querySelector(".quizContent-page");
 const quizResult = document.querySelector(".result-page");
@@ -96,9 +96,9 @@ const correction = document.querySelector('.corrections') ;
                 You answered: ${
                   Array.isArray(choosenAnswer)
                     ? choosenAnswer.length > 0
-                      ? choosenAnswer.join(", ")
+                      ? choosenAnswer.join(", ") 
                       : "No answer"
-                    : choosenAnswer
+                    : choosenAnswer 
                     ? choosenAnswer
                     : "No answer"
                 }
@@ -118,12 +118,12 @@ const correction = document.querySelector('.corrections') ;
                   }
   });
 document.querySelector('.score').textContent = `Score : ${score}`;
-feedback(score);
+feedback(userAnswers, score);
 
 }
 
 // for the quiz feedback :
-function feedback(score) {
+function feedback(userAnswers, score) {
   let message = "";
 
   if (score === 10) {
@@ -139,6 +139,8 @@ function feedback(score) {
   }
 
   document.querySelector(".feedback").textContent = message;
+        stockUserAnswers(userAnswers, score); 
+
 }
 
 
