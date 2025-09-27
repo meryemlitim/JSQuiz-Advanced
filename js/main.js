@@ -10,7 +10,7 @@ const chooseUsernamePage = document.querySelector(".chooseUsername-page");
 const playAgainBtn = document.querySelector('.play-btn');
 const dashbord = document.querySelector('.dashbord');
 export let usernameName;
-
+export let choosentheme;
 // Enter username :
 chooseUsername(); 
 
@@ -54,6 +54,8 @@ btn.addEventListener("click", () => {
 chooseThemePage.style.display = "none";
 quizContentPage.style.display = "flex";
 const theme = btn.dataset.theme;
+ choosentheme = btn.dataset.theme;
+
 loadQuestion(theme);
 });
 });

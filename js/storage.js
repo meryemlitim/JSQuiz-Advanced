@@ -1,4 +1,4 @@
-import { usernameName } from "./main.js"
+import { usernameName, choosentheme } from "./main.js"
 
 // store the user's answers & score & username in local storage :
 export function stockUserAnswers(userAnswers, score){
@@ -10,8 +10,10 @@ export function stockUserAnswers(userAnswers, score){
     usernameName: usernameName,
     answers : userAnswers,
     score : score,
+    theme : choosentheme,
   });
 
   localStorage.setItem("UserQuizReview", JSON.stringify(UserQuizReview));
 
 }
+
