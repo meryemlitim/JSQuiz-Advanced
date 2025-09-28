@@ -299,6 +299,7 @@ font-size: 20px;
 
 
 
+
 /* dashbord */
 
 .dashbord{
@@ -306,7 +307,7 @@ font-size: 20px;
  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
  min-height: 100vh;
  padding: 20px;
- display: none;
+ /* display: none; */
  /* width: 100vh; */
             
 }
@@ -522,10 +523,10 @@ font-size: 20px;
         }
 
         .theme-science { background-color: #4CAF50; }
-        .theme-histoire { background-color: #FF9800; }
-        .theme-sport { background-color: #2196F3; }
+        .theme-javascript { background-color: #FF9800; }
+        .theme-nodejs { background-color: #2196F3; }
         .theme-culture { background-color: #9C27B0; }
-        .theme-geographie { background-color: #F44336; }
+        .theme-japanese { background-color: #F44336; }
 
         .no-data {
             text-align: center;
@@ -620,4 +621,81 @@ font-size: 20px;
   border-radius: 8px;         
   cursor: pointer;            
  display: none;
+}
+
+.theme-stats-section {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    margin-bottom: 30px;
+}
+
+.theme-stats-section h3 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.3rem;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 10px;
+}
+
+.theme-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.theme-stat-card {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    border-left: 4px solid;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.theme-stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.theme-stat-card.science { border-left-color: #4CAF50; }
+.theme-stat-card.javascript { border-left-color: #FF9800; }
+.theme-stat-card.nodejs { border-left-color: #2196F3; }
+.theme-stat-card.culture { border-left-color: #9C27B0; }
+.theme-stat-card.japanese { border-left-color: #F44336; }
+
+.theme-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.theme-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.theme-games,
+.theme-avg {
+    text-align: center;
+}
+
+.theme-games .value,
+.theme-avg .value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.theme-games .label,
+.theme-avg .label {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 5px;
 }

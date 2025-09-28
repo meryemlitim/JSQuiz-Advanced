@@ -23,7 +23,7 @@
       <button class="play-btn">▶ Play Quiz</button>
       <div class="header">
         <h1>Quiz Dashboard</h1>
-      </div>
+      </div> 
 
       <div class="stats-grid">
         <div class="stat-card">
@@ -44,11 +44,11 @@
           <div class="stat-label">Points on average</div>
         </div>
 
-        <div class="stat-card">
+        <!-- <div class="stat-card">
           <h3>🎨 Favorite Theme</h3>
           <div class="stat-value" id="favTheme">-</div>
           <div class="stat-label">Most played</div>
-        </div>
+        </div> -->
       </div>
 
       <div class="leaderboard">
@@ -71,6 +71,80 @@
           </div>
         </div>
       </div>
+<div class="theme-stats-section">
+    <h3>📊 Statistics by Theme</h3>
+    <div class="theme-stats-grid">
+        <div class="theme-stat-card science">
+            <div class="theme-name">Science</div>
+            <div class="theme-stats">
+                <div class="theme-games">
+                    <div class="value">15</div>
+                    <div class="label">Games</div>
+                </div>
+                <div class="theme-avg">
+                    <div class="value">87</div>
+                    <div class="label">Avg Score</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-stat-card history">
+            <div class="theme-name">History</div>
+            <div class="theme-stats">
+                <div class="theme-games">
+                    <div class="value">12</div>
+                    <div class="label">Games</div>
+                </div>
+                <div class="theme-avg">
+                    <div class="value">82</div>
+                    <div class="label">Avg Score</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-stat-card sports">
+            <div class="theme-name">Sports</div>
+            <div class="theme-stats">
+                <div class="theme-games">
+                    <div class="value">9</div>
+                    <div class="label">Games</div>
+                </div>
+                <div class="theme-avg">
+                    <div class="value">79</div>
+                    <div class="label">Avg Score</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-stat-card culture">
+            <div class="theme-name">Culture</div>
+            <div class="theme-stats">
+                <div class="theme-games">
+                    <div class="value">8</div>
+                    <div class="label">Games</div>
+                </div>
+                <div class="theme-avg">
+                    <div class="value">85</div>
+                    <div class="label">Avg Score</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-stat-card geography">
+            <div class="theme-name">Geography</div>
+            <div class="theme-stats">
+                <div class="theme-games">
+                    <div class="value">6</div>
+                    <div class="label">Games</div>
+                </div>
+                <div class="theme-avg">
+                    <div class="value">91</div>
+                    <div class="label">Avg Score</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
       <div class="charts-section">
         <div class="chart-container">
@@ -87,7 +161,8 @@
       <div class="history-section">
         <h3>📋 Game History</h3>
         <div id="historyContent">
-          <div class="no-data">No games recorded yet</div>
+          
+          <!-- <div class="no-data">No games recorded yet</div> -->
         </div>
       </div>
     </div>
@@ -142,6 +217,8 @@
 
 
   <script type="module" src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </body>
 
 </html>
