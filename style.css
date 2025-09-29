@@ -2,13 +2,22 @@
     height: 100vh;
     width: 200vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 80px;
     display: none;
 
 }
-
+.allThemes{
+   /* height: 100vh; */
+    width: 200vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    /* display: none; */
+}
 .choose-topic{
     display: flex;
     flex-direction: column;
@@ -233,6 +242,18 @@ font-size: 20px;
   margin-top: 40px;
   margin-bottom: 40px;
 }
+.back-export {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 .retake-quiz {
   background-color: #514caf;
   color: white;
@@ -307,7 +328,7 @@ font-size: 20px;
  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
  min-height: 100vh;
  padding: 20px;
- /* display: none; */
+ display: none;
  /* width: 100vh; */
             
 }
@@ -480,8 +501,25 @@ font-size: 20px;
             box-shadow: 0 8px 32px rgba(0,0,0,0.1);
             border: 1px solid rgba(255,255,255,0.2);
         }
+        .export-section {
+          margin-top: 10px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
 
         .history-section h3 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.3rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .export-section h3 {
             color: #333;
             margin-bottom: 20px;
             text-align: center;

@@ -25,7 +25,8 @@ const UserQuizReview = JSON.parse(localStorage.getItem("UserQuizReview") ||  [])
         export function AverageScore(){
         let scoreArray = UserQuizReview.map( user => user.score);
         const total = scoreArray.reduce((sum,val) => sum + val ,0);
-        return total/scoreArray.length;
+        let avg = total/scoreArray.length;
+        return avg.toFixed(2);
         }
 
         // Favorite Theme
@@ -35,12 +36,19 @@ const UserQuizReview = JSON.parse(localStorage.getItem("UserQuizReview") ||  [])
         }
         
         //  Score Progress
-        export function ScoreProgress(){
-            let progVal = UserQuizReview.map(item => ({
+        export function ScoreProgress(usernameName){
+            let progVal= UserQuizReview.filter(user => user.usernameName === usernameName).map(item => ({
                 score : item.score,
                 date : item.date
 
             }));
+
+
+            // let progVal = UserQuizReview.map(item => ({
+            //     score : item.score,
+            //     date : item.date
+
+            // }));
             return progVal;
         }
 

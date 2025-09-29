@@ -1,4 +1,4 @@
-import { loadQuestion, resetCurrentQuestion } from "./quiz.js";
+import { loadQuestion, resetCurrentQuestion, exportToJSON, exportToCSV } from "./quiz.js";
 import { topThreePlayers, gamePLayedNum, bestScore, AverageScore, themeStatics, ScoreProgress, histroryQuizs  } from "./stats.js";
 // import {chooseUsername } from "./ui.js"
 import { renderThemeDistribution, renderScoreProgress } from "./charts.js";
@@ -75,8 +75,12 @@ document.querySelector('.retake-quiz').addEventListener('click', () => {
 // Go Back To Dashboard :
 document.querySelector('.back-to-dashboard').addEventListener('click', () => {
   resetCurrentQuestion();   
+  DashboardContent();   
+
+  document.querySelector('.chooseTopic-page').style.display = 'none';
   document.querySelector('.dashbord').style.display = 'block';
   document.querySelector('.result-page').style.display = 'none';  
+
 });
 
 // play quiz again : 
@@ -85,7 +89,8 @@ chooseTheme();
 })
 
 
-// general statistics :
+function DashboardContent(){
+  // general statistics :
 function GeneralStatistics(){
 
   // total games played  :  
@@ -160,8 +165,9 @@ renderThemeDistribution(ctx, themeStats);
 // for Score Progress :
 
 const ctx2 = document.getElementById("progressChart").getContext("2d");
-const data = ScoreProgress();
+const data = ScoreProgress(usernameName);
 renderScoreProgress(ctx2, data);
+ 
 
 // Game History :
 
@@ -178,7 +184,14 @@ let tableHeder = `
             </thead>
             <tbody>
 `;
-let quizHis = histroryQuizs("unko");
+let quizHis = histroryQuizs(usernameName);
+if(quizHis.length === 0){
+  document.getElementById('historyContent').innerHTML= `
+    <div class="no-data">No games recorded yet</div>
+
+  `;
+  return;
+}
 console.log("🔪🔪🔪🙂", quizHis);
 quizHis.forEach((q,index) => {
   
@@ -204,3 +217,19 @@ document.getElementById('historyContent').innerHTML = tableHeder;
 
 
 GameHistory();
+
+}
+
+
+
+// export json :
+
+document.getElementById('btn-export-JSON').addEventListener('click',()=>{
+  exportToJSON(usernameName);
+})
+
+// export CSV :
+document.getElementById('btn-export-CSV').addEventListener('click',()=>{
+  alert("cvs");
+  exportToCSV(usernameName);
+})
