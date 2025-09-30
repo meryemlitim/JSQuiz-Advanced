@@ -40,7 +40,8 @@ export function renderQuestion() {
         .join("")}
     </div>
     <div class="quizContent-footer">
-        <button class="next-btn">NEXT</button>
+    <button class="end-btn">Exit Quiz</button>
+    <button class="next-btn">NEXT</button>
         
     </div>
   </div>

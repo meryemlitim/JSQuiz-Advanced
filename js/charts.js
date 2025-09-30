@@ -5,7 +5,7 @@ export function renderThemeDistribution(ctx, themeStats) {
     data: {
       labels: themeStats.map(stat => stat.theme),
       datasets: [{
-        label: "Nombre de parties",
+        label: "Total Quiz per theme",
         data: themeStats.map(stat => stat.gameNum),
         backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4CAF50"]
       }]

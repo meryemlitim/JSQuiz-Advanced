@@ -137,6 +137,17 @@ font-size: 20px;
   background-color: #007bff;
   color: white;
 }
+.end-btn {
+  background-color: #ed290a;
+  color: white;
+   padding: 12px 30px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
 
 .next-btn:hover {
   background-color: #0056b3;

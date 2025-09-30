@@ -15,10 +15,9 @@ export let usernameName;
 export let choosentheme;
 
 const allThemes = ["javascript", "japanese", "nodejs"];   
+
 // Enter username :
 chooseUsername(); 
-
-// username :
 function chooseUsername() {
   chooseUsernamePage.style.display = "flex";
  
@@ -88,8 +87,9 @@ playAgainBtn.addEventListener('click', () => {
 chooseTheme();
 })
 
-
+// all dashboard content :
 function DashboardContent(){
+
   // general statistics :
 function GeneralStatistics(){
 
@@ -115,7 +115,6 @@ document.getElementById('bestScore').textContent = bestScore();
 document.getElementById('avgScore').textContent = AverageScore();
 
 }
-
 GeneralStatistics();
 
 
@@ -141,16 +140,14 @@ function StatisticsTheme(){
     `;
   }).join("")
 }
-
 StatisticsTheme();
 
 
 // charts :
-
 let themeStats = []; 
 allThemes.forEach(theme => {
   const val = themeStatics(theme);
-  let themeName =theme;
+  // let themeName =theme;
    themeStats.push({
     theme : theme,
     gameNum : val[0],
@@ -163,14 +160,12 @@ const ctx = document.getElementById("themeChart").getContext("2d");
 renderThemeDistribution(ctx, themeStats);
 
 // for Score Progress :
-
 const ctx2 = document.getElementById("progressChart").getContext("2d");
 const data = ScoreProgress(usernameName);
 renderScoreProgress(ctx2, data);
  
 
 // Game History :
-
 function GameHistory(){
 let tableHeder = `
  <table class="history-table">
@@ -214,8 +209,6 @@ tableHeder += `
 
 document.getElementById('historyContent').innerHTML = tableHeder;
 }
-
-
 GameHistory();
 
 }
@@ -230,6 +223,5 @@ document.getElementById('btn-export-JSON').addEventListener('click',()=>{
 
 // export CSV :
 document.getElementById('btn-export-CSV').addEventListener('click',()=>{
-  alert("cvs");
   exportToCSV(usernameName);
 })

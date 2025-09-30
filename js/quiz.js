@@ -114,7 +114,6 @@ export function resetCurrentQuestion() {
 
 // export json :
   let UserQuizReview = JSON.parse(localStorage.getItem("UserQuizReview")) || [];
-  // let usernameName = "unko";
   
   export function exportToJSON(usernameName) {
   let  CurrentUserQuiz = UserQuizReview.filter(item => item.usernameName === usernameName); 
@@ -125,7 +124,7 @@ export function resetCurrentQuestion() {
   // 1. Convert data to JSON text
   const jsonData = JSON.stringify(CurrentUserQuiz, null, 2);
 
-  // 2. Create a Blob (a file in memory)
+  // 2. Create a Blob
   const blob = new Blob([jsonData], { type: "application/json" });
 
   // 3. Create a link to download
@@ -149,10 +148,10 @@ export function exportToCSV(usernameName) {
     return;
   }
 
-  if (!CurrentUserQuiz.length) {
-    alert("No quiz data found for this user.");
-    return;
-  }
+  // if (!CurrentUserQuiz.length) {
+  //   alert("No quiz data found for this user.");
+  //   return;
+  // }
 
   const headers = Object.keys(CurrentUserQuiz[0]).join(",");
 
@@ -180,3 +179,4 @@ export function exportToCSV(usernameName) {
   link.click();
   document.body.removeChild(link);
 }
+

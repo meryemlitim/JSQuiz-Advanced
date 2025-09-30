@@ -1,5 +1,5 @@
 
-const UserQuizReview = JSON.parse(localStorage.getItem("UserQuizReview") ||  []);
+const UserQuizReview = JSON.parse(localStorage.getItem("UserQuizReview")) ||  [];
 
 // general statistics :
 

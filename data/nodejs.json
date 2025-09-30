@@ -7,19 +7,19 @@
   },
   {
     "question": "Which keyword is used to declare a variable in ES6?",
-    "time":5,
+    "time":10,
     "options": ["var", "let", "const", "int"],
     "correct": ["let", "const"]
   },
   {
     "question": "What is the output of: console.log(typeof null)?",
-    "time":5,
+    "time":10,
     "options": ["object", "null", "undefined", "boolean"],
     "correct": ["object"]
   },
   {
     "question": "Which method converts a JSON string into a JavaScript object?",
-    "time":5,
+    "time":10,
     "options": ["JSON.parse()", "JSON.stringify()", "Object.parse()", "toObject()"],
     "correct": ["JSON.parse()"]
   },
@@ -31,7 +31,7 @@
   },
   {
     "question": "What is the result of 2 + '2' in JavaScript?",
-    "time":5,
+    "time":8,
     "options": ["4", "'22'", "NaN", "Error"],
     "correct": ["'22'"]
   },

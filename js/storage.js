@@ -13,6 +13,7 @@ export function stockUserAnswers(userAnswers, score){
     score : score,
     theme : choosentheme,
     date : dateTime,
+    iscompleted : true,
   });
 
   localStorage.setItem("UserQuizReview", JSON.stringify(UserQuizReview));
