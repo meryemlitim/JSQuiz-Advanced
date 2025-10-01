@@ -13,7 +13,7 @@ let quizEnd = false;
 // load Questions:
 export async function loadQuestion(theme) {
   try {
-    const response = await fetch(`../data/${theme}.json`);
+    const response = await fetch(`./data/${theme}.json`);
     questions = await response.json();
     console.log("questins : ", questions);
 
